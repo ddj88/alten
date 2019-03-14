@@ -37,7 +37,6 @@ export class FormularioComponent {
         break;
       
       case 2:
-        this.forma.value.name = null;
         this.resume();
         this.titulo = 'Resumen';
         break;
