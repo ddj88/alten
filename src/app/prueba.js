@@ -108,7 +108,7 @@ for (let comarca of data.entry) {
     summary.entry.push(summaryComarca);
 }
   
- console.log(summary.entry);
+ console.log(summary);
 
  //arreglé esta funcion para que no modificase el valor original
 

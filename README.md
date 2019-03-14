@@ -1,5 +1,12 @@
 # Alten
 
+
+El proyecto esta montado con angular 7 y angular material
+
+La segunda parte de la prueba, el debug, es el archivo .js llamado prueba.js, esta en src/app
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.3.
 
 ## Development server
