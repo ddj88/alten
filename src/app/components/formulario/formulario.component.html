@@ -1,0 +1,46 @@
+<div>
+  <div>
+    <app-toolbar [titulo]='titulo'></app-toolbar>
+  </div>
+<br>
+  <div>
+
+
+      <form [formGroup]="forma" (ngSubmit)="resume()" native>
+
+        <!-- fase 1 -->
+
+        <mat-form-field *ngIf="step==0">
+          <input [(ngModel)]="usuario.name" matInput placeholder="What's your name?" formControlName="name">
+        </mat-form-field>
+
+
+        <!-- fase 2 -->
+
+        <mat-form-field *ngIf="step==1">
+          <input [(ngModel)]="usuario.age" matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="age">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+
+
+        <!-- fase 3 -->
+        <mat-list *ngIf="step==2">
+          <mat-list-item> <i class="material-icons">face</i> Nombre: {{this.usuario.name}} </mat-list-item>
+          <mat-list-item><i class="material-icons">cake</i> Año : {{this.usuario.age}} </mat-list-item>
+        </mat-list>
+
+
+        <mat-divider></mat-divider>
+        <button *ngIf="step==0" (click)="next(1)" mat-button color="primary" [disabled]="!usuario.name.length>0" >Siguiente </button>
+        <button *ngIf="step==1" (click)="next(-1)" mat-button color="primary">Atras</button>
+        <button *ngIf="step==1" (click)="next(1)" mat-button color="primary" [disabled]="usuario.age===''">Siguiente </button>
+        <button *ngIf="step==2" (click)="enviar()" mat-button color="primary" type="submit">Enviar</button>
+      </form>
+
+
+  </div>
+
+
+</div>
